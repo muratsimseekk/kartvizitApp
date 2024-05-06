@@ -1,4 +1,24 @@
-.header{
-  height: 70px;
-  background-color: bisque;
+.example-spacer {
+  flex: 1 1 auto;
+}
+
+.header-menu{
+  display: flex;
+  list-style: none;
+  li{
+    a{
+      color: white;
+      padding: 0 15px;
+      cursor: pointer;
+      text-decoration: none;
+      font-size: 17px;
+      opacity: 0.7;
+      &:hover,
+      &.active
+      {
+        opacity: 1;
+        font-size: 18px;
+      }
+    }
+  }
 }

@@ -1,0 +1,23 @@
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title>{{ cards.id }}</mat-card-title>
+    <mat-card-title>{{ cards.name }}</mat-card-title>
+    <mat-card-subtitle>{{ cards.title }}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <div class="card" style="width: auto;">
+      <ul class="list-group list-group-flush">
+        <li class="list-group-item">{{ cards.phone }}</li>
+        <li class="list-group-item">
+          <span *ngIf="cards.email">{{ cards.email }}
+        </span>
+          <small *ngIf="!cards.email" class="warning-content">Email adresi girilmemis</small>
+        </li>
+        <li class="list-group-item">
+          <span *ngIf="cards.address">{{ cards.address }}</span>
+          <small *ngIf="!cards.address" class="warning-content">Adres girilmemis</small>
+        </li>
+      </ul>
+    </div>
+  </mat-card-content>
+</mat-card>

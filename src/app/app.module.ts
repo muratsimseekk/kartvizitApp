@@ -6,6 +6,12 @@ import { AppComponent } from './app.component';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { AboutComponent } from './components/about/about.component';
+import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import {MatToolbarModule} from '@angular/material/toolbar';
+import {MatIconModule} from "@angular/material/icon";
+import {MatButtonModule} from '@angular/material/button';
+import {MatDialog, MatDialogModule} from "@angular/material/dialog";
+import {HttpClientModule} from "@angular/common/http";
 
 
 @NgModule({
@@ -15,13 +21,25 @@ import { AboutComponent } from './components/about/about.component';
     HeaderComponent,
     AboutComponent,
 
+
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    BrowserAnimationsModule,
+    MatToolbarModule,
+    MatIconModule,
+    MatButtonModule,
+    MatDialogModule,
+    HttpClientModule
 
   ],
-  providers: [],
+  providers: [
+    {
+      provide:'apiUrl',
+      useValue:'https://demo.limantech.com/cards/public/api'
+    },
+    MatDialog],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
